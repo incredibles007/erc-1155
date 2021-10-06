@@ -15,6 +15,9 @@ class Connect {
 
   balanceOfBatch = (wallet, tokenId) =>
     this.instance.methods.balanceOfBatch(wallet, tokenId).call()
+
+  create = (tokenId, _tokenURI) =>
+    this.instance.methods.create(tokenId, _tokenURI).send(this.options)
 }
 
 module.exports = Connect
