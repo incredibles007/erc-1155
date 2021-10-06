@@ -28,6 +28,16 @@ class Connect {
     this.instance.methods
       .mintBatch(toAddress, tokenId, amount, '0x0')
       .send(this.options)
+
+  safeTransferFrom = (fromAddress, toAddress, tokenId, amount) =>
+    this.instance.methods
+      .safeTransferFrom(fromAddress, toAddress, tokenId, amount, '0x0')
+      .send(this.options)
+
+  safeBatchTransferFrom = (fromAddress, toAddress, tokenId, amount) =>
+    this.instance.methods
+      .safeBatchTransferFrom(fromAddress, toAddress, tokenId, amount, '0x0')
+      .send(this.options)
 }
 
 module.exports = Connect
