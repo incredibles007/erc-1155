@@ -12,6 +12,9 @@ class Connect {
 
   balanceOf = (wallet, tokenId) =>
     this.instance.methods.balanceOf(wallet, tokenId).call()
+
+  balanceOfBatch = (wallet, tokenId) =>
+    this.instance.methods.balanceOfBatch(wallet, tokenId).call()
 }
 
 module.exports = Connect
