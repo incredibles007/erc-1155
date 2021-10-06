@@ -18,6 +18,16 @@ class Connect {
 
   create = (tokenId, _tokenURI) =>
     this.instance.methods.create(tokenId, _tokenURI).send(this.options)
+
+  mint = (toAddress, tokenId, amount) =>
+    this.instance.methods
+      .mint(toAddress, tokenId, amount, '0x0')
+      .send(this.options)
+
+  mintBatch = (toAddress, tokenId, amount) =>
+    this.instance.methods
+      .mintBatch(toAddress, tokenId, amount, '0x0')
+      .send(this.options)
 }
 
 module.exports = Connect
